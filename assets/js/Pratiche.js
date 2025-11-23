@@ -378,9 +378,11 @@ $(document).on('click', '.carall_pr', async function () {
             success: function (data) {
                 if (data == 'fileno') {
                     Swal.fire({ icon: 'error', title: 'File non esistente o sconosciuto' })
-                } else if (data == 'carno') {
-                    Swal.fire({ icon: 'error', title: 'Errore generico nel salvataggio del file!' })
-                } else {
+                } else if (data.includes('carno')) {
+    var r = data.split(';');
+    var msg = r[1] ? r[1] : 'Errore generico nel salvataggio del file!';
+    Swal.fire({ icon: 'error', title: 'Errore Upload', text: msg });
+} else {
                     InvioMailPratica('aggiornata', 'E\' stato aggiunto un nuovo allegato!')
                     Swal.fire({ icon: 'success', title: 'File caricato correttamente!' })
                 }

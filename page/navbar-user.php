@@ -65,6 +65,7 @@
             <?= ($_SESSION['session_perm'][3][3] == 1 ? '<a class="dropdown-item text-warning" onclick="Debug()" id="CheckDebug" debug="0" href="javascript:void(0)"></span></a>' : ''); ?>
             <?= ($_SESSION['session_perm'][3][3] == 1 ? '<a class="dropdown-item" href="https://linp133.arubabusiness.it:8443/phpMyAdmin/index.php?db=oxy80n60_itman" target="_blank">Database</a>' : ''); ?>
             <a class="dropdown-item" href="javascript:void(0)" onclick="cambiopagina('app', 'impostazioni','')">Impostazioni</a>
+            <?= ($_SESSION['session_perm'][3][3] == 1 ? '<a class="dropdown-item" href="javascript:void(0)" onclick="cambiopagina(\'amministrazione\', \'gestione-permessi\',\'\')">Gestione Permessi</a>' : ''); ?>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="utente/auth/logout.php">Logout</a>
         </div>

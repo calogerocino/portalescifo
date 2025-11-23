@@ -179,7 +179,7 @@ function ModificaCombinazione(element) {
     });
 }
 
-$(document).on('click', '.CreaNuovoProdotto', function () {
+$(document).off('click', '.CreaNuovoProdotto').on('click', '.CreaNuovoProdotto', function () {
     //crea nuovo prodotto
     if ($('#nomeprod').val() == '') {
         Toast.fire({
